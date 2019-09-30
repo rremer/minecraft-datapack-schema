@@ -1,0 +1,22 @@
+{
+	"type": "crafting_shapeless",
+	"group": "testing",
+	"ingredients": [
+		{
+			"item": "minecraft:sand"
+		},
+		{
+			"item": "minecraft:sand"
+		},
+		{
+			"item": "minecraft:bed"
+		},
+		{
+			"item": "minecraft:sand"
+		}
+	],
+	"result": {
+		"item": "minecraft:sandy_bed",
+		"count": 1
+	}
+}

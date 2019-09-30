@@ -1,0 +1,6 @@
+{
+	"$schema": "${url.schema.json}",
+	"title": "Minecraft Loot Table ${version.minecraft} Draft ${project.version}",
+	"description": "Minecraft datapack Loot Table object schema for version ${version.minecraft}",
+	"$ref": "${url.schema.minecraft}#/definitions/loot_table"
+}

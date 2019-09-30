@@ -1,0 +1,25 @@
+{
+	"type": "crafting_shaped",
+	"group": "testing",
+	"pattern": [
+		"#X#",
+		"XXX",
+		"#X#"
+	],
+	"key": {
+		"#": [
+			{
+				"item": "minecraft:sand"
+			},
+			{
+				"item": "minecraft:gold_ingot"
+			}
+		],
+		"X": {
+			"item": "minecraft:gunpowder"
+		}
+	},
+	"result": {
+		"item": "minecraft:tnt"
+	}
+}
