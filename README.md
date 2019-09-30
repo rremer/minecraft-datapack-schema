@@ -13,10 +13,20 @@ In your maven project with oss.sonatype.org as an upstream repository:
     <artifactId>minecraft-datapack-schema-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
+
+  <properties>
+    <parameter.schema.validation.phase>test</parameter.schema.validation.phase>
+  </properties>
 ```
 
 ## Building
 
 ```sh
 mvn clean install
+```
+
+## Releasing
+
+```sh
+mvn clean install -Dparameter.gpg.skip=false
 ```
