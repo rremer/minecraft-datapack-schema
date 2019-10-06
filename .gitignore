@@ -1,6 +1,9 @@
 .classpath
 .project
 .settings/**
+*/.settings/**
 target/**
 pom.xml.bak
 target/
+*versionsBackup
+**/*versionsBackup

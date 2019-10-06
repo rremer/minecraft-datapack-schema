@@ -4,7 +4,7 @@
 
   <groupId>com.github.rremer</groupId>
   <artifactId>minecraft-datapack-schema-parent</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.13.2-1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Minecraft Datapack Schema Parent</name>
@@ -46,13 +46,9 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <path.schema>${project.basedir}/target/classes/schema</path.schema>
-    <parameter.schema.validation.phase>disabled</parameter.schema.validation.phase>
     <parameter.gpg.skip>true</parameter.gpg.skip>
     <scm.url>https://github.com/rremer/minecraft-datapack-schema</scm.url>
 
-    <version.json-schema-validator>1.2.0</version.json-schema-validator>
-    <version.maven-dependency-plugin>3.1.1</version.maven-dependency-plugin>
     <version.nexus-staging-maven-plugin>1.6.8</version.nexus-staging-maven-plugin>
     <version.maven-gpg-plugin>1.6</version.maven-gpg-plugin>
     <version.minecraft>1.13.2</version.minecraft>
@@ -60,58 +56,6 @@
 
   <build>
     <plugins>
-      <plugin>
-        <groupId>com.groupon.maven.plugin.json</groupId>
-        <artifactId>json-schema-validator</artifactId>
-        <version>${version.json-schema-validator}</version>
-        <executions>
-          <execution>
-            <phase>${parameter.schema.validation.phase}</phase>
-            <goals>
-              <goal>validate</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <validations>
-            <validation>
-              <directory>${project.basedir}/src/main/resources/advancements</directory>
-              <jsonSchema>${path.schema}/advancement.schema</jsonSchema>
-              <includes>
-                <include>**/*.json</include>
-              </includes>
-            </validation>
-            <validation>
-              <directory>${project.basedir}/src/main/resources/recipes</directory>
-              <jsonSchema>${path.schema}/recipe.schema</jsonSchema>
-              <includes>
-                <include>**/*.json</include>
-              </includes>
-            </validation>
-            <validation>
-              <directory>${project.basedir}/src/main/resources/loot_tables</directory>
-              <jsonSchema>${path.schema}/loot_table.schema</jsonSchema>
-              <includes>
-                <include>**/*.json</include>
-              </includes>
-            </validation>
-            <validation>
-              <directory>${project.basedir}/src/main/resources/tags</directory>
-              <jsonSchema>${path.schema}/tag.schema</jsonSchema>
-              <includes>
-                <include>**/*.json</include>
-              </includes>
-            </validation>
-            <validation>
-              <directory>${project.basedir}/src/main/resources/mcmeta</directory>
-              <jsonSchema>${path.schema}/mcmeta.schema</jsonSchema>
-              <includes>
-                <include>**/*.mcmeta</include>
-              </includes>
-            </validation>
-          </validations>
-        </configuration>
-      </plugin>
       <plugin>
         <groupId>org.sonatype.plugins</groupId>
         <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -142,4 +86,5 @@
       </plugin>
     </plugins>
   </build>
+
 </project>
