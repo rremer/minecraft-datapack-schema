@@ -1,8 +1,9 @@
 # minecraft-datapack-schema
 
 [![Build Status](https://img.shields.io/travis/rremer/minecraft-datapack-schema)](https://travis-ci.org/rremer/minecraft-datapack-schema)
-[![Maven Central](https://img.shields.io/badge/version-1.0.0-green.svg)](https://search.maven.org/artifact/com.github.rremer/minecraft-datapack-schema/1.0.0/jar)
-![License](https://img.shields.io/github/license/rremer/minecraft-datapack-schema)
+[![Maven Central](https://img.shields.io/nexus/r/com.github.rremer/minecraft-datapack-schema?server=https%3A%2F%2Foss.sonatype.org)](https://search.maven.org/artifact/com.github.rremer/minecraft-datapack-schema/1.13.2-1/jar)
+[![License](https://img.shields.io/github/license/rremer/minecraft-datapack-schema)](https://opensource.org/licenses/MIT)
+[![Keybase PGP](https://img.shields.io/keybase/pgp/rremer)](https://keybase.io/rremer/pgp_keys.asc)
 
 Schema for Minecraft Datapacks.
 
