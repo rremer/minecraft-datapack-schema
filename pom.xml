@@ -1,90 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.github.rremer</groupId>
+        <artifactId>maven-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
 
-  <groupId>com.github.rremer</groupId>
-  <artifactId>minecraft-datapack-schema-parent</artifactId>
-  <version>1.13.2-1-SNAPSHOT</version>
-  <packaging>pom</packaging>
+    <groupId>com.github.rremer</groupId>
+    <artifactId>minecraft-datapack-schema-parent</artifactId>
+    <version>1.13.2-1-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-  <name>Minecraft Datapack Schema Parent</name>
-  <description>A parent pom for Minecraft datapacks.</description>
-  <url>${scm.url}</url>
+    <name>Minecraft Datapack Schema Parent</name>
+    <description>A parent pom for Minecraft datapacks.</description>
 
-  <licenses>
-    <license>
-      <name>BSD-3</name>
-    </license>
-  </licenses>
+    <modules>
+        <module>schema</module>
+    </modules>
 
-  <developers>
-    <developer>
-      <id>rremer</id>
-      <email>royceremer@gmail.com</email>
-      <timezone>America/Los_Angeles</timezone>
-    </developer>
-  </developers>
+    <properties>
 
-  <modules>
-    <module>schema</module>
-  </modules>
+        <parameter.disable.semantic.versioning>true</parameter.disable.semantic.versioning>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <scm.url>https://github.com/rremer/minecraft-datapack-schema</scm.url>
+        <version.minecraft>1.13.2</version.minecraft>
+    </properties>
 
-  <scm>
-    <connection>scm:git:git:${scm.url}.git</connection>
-    <developerConnection>scm:git:git:${scm.url}.git</developerConnection>
     <url>${scm.url}</url>
-  </scm>
-  <issueManagement>
-    <system>Github Issues</system>
-    <url>${scm.url}/issues</url>
-  </issueManagement>
 
-  <ciManagement>
-    <system>travis</system>
-    <url>https://travis-ci.org/rremer/minecraft-datapack-schema</url>
-  </ciManagement>
+    <licenses>
+        <license>
+            <name>BSD-3</name>
+        </license>
+    </licenses>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <parameter.gpg.skip>true</parameter.gpg.skip>
-    <scm.url>https://github.com/rremer/minecraft-datapack-schema</scm.url>
+    <developers>
+        <developer>
+            <id>rremer</id>
+            <email>royceremer@gmail.com</email>
+            <timezone>America/Los_Angeles</timezone>
+        </developer>
+    </developers>
 
-    <version.nexus-staging-maven-plugin>1.6.8</version.nexus-staging-maven-plugin>
-    <version.maven-gpg-plugin>1.6</version.maven-gpg-plugin>
-    <version.minecraft>1.13.2</version.minecraft>
-  </properties>
+    <scm>
+        <connection>scm:git:git:${scm.url}.git</connection>
+        <developerConnection>scm:git:git:${scm.url}.git</developerConnection>
+        <url>${scm.url}</url>
+    </scm>
+    <issueManagement>
+        <system>Github Issues</system>
+        <url>${scm.url}/issues</url>
+    </issueManagement>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>${version.nexus-staging-maven-plugin}</version>
-        <extensions>true</extensions>
-        <configuration>
-          <nexusUrl>https://oss.sonatype.org</nexusUrl>
-          <serverId>oss.sonatype.org</serverId>
-          <autoReleaseAfterClose>true</autoReleaseAfterClose>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-gpg-plugin</artifactId>
-        <version>${version.maven-gpg-plugin}</version>
-        <executions>
-          <execution>
-            <id>sign-artifacts</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>sign</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <skip>${parameter.gpg.skip}</skip>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+    <ciManagement>
+        <system>travis</system>
+        <url>https://travis-ci.org/rremer/minecraft-datapack-schema</url>
+    </ciManagement>
 
 </project>
