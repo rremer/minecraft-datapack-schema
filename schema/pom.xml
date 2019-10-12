@@ -5,12 +5,12 @@
     <parent>
         <groupId>com.github.rremer</groupId>
         <artifactId>minecraft-datapack-schema-parent</artifactId>
-        <version>1.14.2-1-SNAPSHOT</version>
+        <version>1.14.4-1-SNAPSHOT</version>
     </parent>
 
     <groupId>com.github.rremer</groupId>
     <artifactId>minecraft-datapack-schema</artifactId>
-    <version>1.14.2-1-SNAPSHOT</version>
+    <version>1.14.4-1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Minecraft Datapack Schema</name>
@@ -18,9 +18,8 @@
 
     <properties>
         <parameter.schema.validation.phase>test</parameter.schema.validation.phase>
-        <path.schema>${project.basedir}/target/classes</path.schema>
+        <url.schema.base>jar:file:./target/${project.artifactId}-${project.version}.jar!</url.schema.base>
         <url.schema.json>http://json-schema.org/draft-07/schema#</url.schema.json>
-        <url.schema.minecraft>file://${path.schema}/main.schema</url.schema.minecraft>
         <version.json-schema-validator>1.2.0</version.json-schema-validator>
     </properties>
 
@@ -40,35 +39,35 @@
                     <validations>
                         <validation>
                             <directory>${project.basedir}/src/test/resources/advancements</directory>
-                            <jsonSchema>${path.schema}/advancement.schema</jsonSchema>
+                            <jsonSchema>${url.schema.base}/advancement.schema</jsonSchema>
                             <includes>
                                 <include>**/*.json</include>
                             </includes>
                         </validation>
                         <validation>
                             <directory>${project.basedir}/src/test/resources/recipes</directory>
-                            <jsonSchema>${path.schema}/recipe.schema</jsonSchema>
+                            <jsonSchema>${url.schema.base}/recipe.schema</jsonSchema>
                             <includes>
                                 <include>**/*.json</include>
                             </includes>
                         </validation>
                         <validation>
                             <directory>${project.basedir}/src/test/resources/loot_tables</directory>
-                            <jsonSchema>${path.schema}/loot_table.schema</jsonSchema>
+                            <jsonSchema>${url.schema.base}/loot_table.schema</jsonSchema>
                             <includes>
                                 <include>**/*.json</include>
                             </includes>
                         </validation>
                         <validation>
                             <directory>${project.basedir}/src/test/resources/tags</directory>
-                            <jsonSchema>${path.schema}/tag.schema</jsonSchema>
+                            <jsonSchema>${url.schema.base}/tag.schema</jsonSchema>
                             <includes>
                                 <include>**/*.json</include>
                             </includes>
                         </validation>
                         <validation>
                             <directory>${project.basedir}/src/test/resources/mcmeta</directory>
-                            <jsonSchema>${path.schema}/mcmeta.schema</jsonSchema>
+                            <jsonSchema>${url.schema.base}/mcmeta.schema</jsonSchema>
                             <includes>
                                 <include>**/*.mcmeta</include>
                             </includes>
@@ -80,7 +79,7 @@
                         <goals>
                             <goal>validate</goal>
                         </goals>
-                        <phase>test</phase>
+                        <phase>integration-test</phase>
                     </execution>
                 </executions>
             </plugin>

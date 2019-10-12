@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "minecraft:red_nether_bricks"
+			"item": "minecraft:nether_brick"
 		},
 		"title": "Nether",
 		"description": "You go to Hell",

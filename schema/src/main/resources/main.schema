@@ -40,16 +40,19 @@
 			"criteria": {
 				"type": "object",
 				"criteria_name": {
-					"$ref": "${url.schema.minecraft}#/definitions/criteria_name"
+					"$ref": "${url.schema.base}/main.schema#/definitions/criteria_name"
 				}
 			}
 		},
 		"icon": {
 			"type": "object",
 			"properties": {
-				"item": {
+				"item": { 
 					"description": "Path to an item icon",
-					"type": "string"
+					"type": "string",
+					"oneOf": [
+                                                  { "$ref": "${url.schema.base}/item.schema#/definitions/item" }
+					         ]
 				},
 				"nbt": {
 					"description": "NBT tag data for the icon",
@@ -64,7 +67,7 @@
 			"type": "object",
 			"properties": {
 				"icon": {
-					"$ref": "${url.schema.minecraft}#/definitions/icon"
+					"$ref": "${url.schema.base}/main.schema#/definitions/icon"
 				},
 				"title": {
 					"description": "The title to display.",
@@ -110,14 +113,14 @@
 			"type": "object",
 			"properties": {
 				"display": {
-					"$ref": "${url.schema.minecraft}#/definitions/display"
+					"$ref": "${url.schema.base}/main.schema#/definitions/display"
 				},
 				"parent": {
 					"description": "The parent advancement in the tree.",
 					"type": "string"
 				},
 				"criteria": {
-					"$ref": "${url.schema.minecraft}#/definitions/criteria_name"
+					"$ref": "${url.schema.base}/main.schema#/definitions/criteria_name"
 				},
 				"requirements": {
 					"description": "List of required criteria, if some are optional.",
@@ -126,7 +129,7 @@
 					]
 				},
 				"rewards": {
-					"$ref": "${url.schema.minecraft}#/definitions/rewards"
+					"$ref": "${url.schema.base}/main.schema#/definitions/rewards"
 				}
 			},
 			"required": [
@@ -138,7 +141,10 @@
 			"properties": {
 				"item": {
 					"description": "A single item, e.g. minecraft:sand.",
-					"type": "string"
+					"type": "string",
+					"oneOf": [
+                                                  { "$ref": "${url.schema.base}/item.schema#/definitions/item" }
+					         ]
 				},
 				"tag": {
 					"description": "A tag (a.k.a Ore Dictionary) for this ingredient, e.g. minecraft:planks",
@@ -154,7 +160,10 @@
 			"properties": {
 				"item": {
 					"description": "A single item, e.g. minecraft:sand.",
-					"type": "string"
+					"type": "string",
+					"oneOf": [
+                                                  { "$ref": "${url.schema.base}/item.schema#/definitions/item" }
+					         ]
 				},
 				"count": {
 					"description": "The number of this item.",
@@ -173,14 +182,26 @@
 					"description": "The type of recipe.",
 					"type": "string",
 					"enum": [
-						"blasting",
-						"campfire",
-						"crafting_shaped",
-						"crafting_shapeless",
-						"smelting",
-						"smoking",
-						"stonecutting",
-						"crafting_special_*"
+                                                "blasting",
+                                                "campfire_cooking",
+                                                "crafting_shaped",
+                                                "crafting_shapeless",
+                                                "crafting_special_armordye",
+                                                "crafting_special_bannerduplicate",
+                                                "crafting_special_bookcloning",
+                                                "crafting_special_firework_rocket",
+                                                "crafting_special_firework_star",
+                                                "crafting_special_firework_star_fade",
+                                                "crafting_special_mapcloning",
+                                                "crafting_special_mapextending",
+                                                "crafting_special_repairitem",
+                                                "crafting_special_shielddecoration",
+                                                "crafting_special_shulkerboxcoloring",
+                                                "crafting_special_suspiciousstew",
+                                                "crafting_special_tippedarrow",
+                                                "smelting",
+                                                "smoking",
+                                                "stonecutting"
 					]
 				},
 				"group": {
@@ -199,21 +220,21 @@
 					"type": "object"
 				},
 				"ingredient": {
-					"$ref": "${url.schema.minecraft}#/definitions/item"
+					"$ref": "${url.schema.base}/main.schema#/definitions/item"
 				},
 				"ingredients": {
 					"type": "array",
 					"items": {
-						"$ref": "${url.schema.minecraft}#/definitions/item"
+						"$ref": "${url.schema.base}/main.schema#/definitions/item"
 					}
 				},
 				"result": {
 					"anyOf": [
 						{
-							"$ref": "${url.schema.minecraft}#/definitions/item"
+							"$ref": "${url.schema.base}/main.schema#/definitions/item"
 						},
 						{
-							"$ref": "${url.schema.minecraft}#/definitions/item_stack"
+							"$ref": "${url.schema.base}/main.schema#/definitions/item_stack"
 						},
 						{
 							"type": "string"
@@ -267,7 +288,7 @@
 					"description": "Chance multiplier for a loot entry.",
 					"anyOf": [
 						{
-							"$ref": "${url.schema.minecraft}#/definitions/loot_table_roll"
+							"$ref": "${url.schema.base}/main.schema#/definitions/loot_table_roll"
 						},
 						{
 							"type": "number"
@@ -278,7 +299,7 @@
 					"description": "Chance multiplier affected by looting/luck.",
 					"anyOf": [
 						{
-							"$ref": "${url.schema.minecraft}#/definitions/loot_table_roll"
+							"$ref": "${url.schema.base}/main.schema#/definitions/loot_table_roll"
 						},
 						{
 							"type": "number"
@@ -329,7 +350,7 @@
 					"type": "array",
 					"items": [
 						{
-							"$ref": "${url.schema.minecraft}#/definitions/loot_table_function"
+							"$ref": "${url.schema.base}/main.schema#/definitions/loot_table_function"
 						}
 					]
 				}
@@ -347,7 +368,7 @@
 					"type": "array",
 					"items": [
 						{
-							"$ref": "${url.schema.minecraft}#/definitions/loot_table_pool"
+							"$ref": "${url.schema.base}/main.schema#/definitions/loot_table_pool"
 						}
 					]
 				}
@@ -364,10 +385,10 @@
 					"type": "object",
 					"anyOf": [
 						{
-							"$ref": "${url.schema.minecraft}#/definitions/function_set_nbt"
+							"$ref": "${url.schema.base}/main.schema#/definitions/function_set_nbt"
 						},
 						{
-							"$ref": "${url.schema.minecraft}#/definitions/function_set_count"
+							"$ref": "${url.schema.base}/main.schema#/definitions/function_set_count"
 						}
 					]
 				},
@@ -407,7 +428,7 @@
 					]
 				},
 				"count": {
-					"$ref": "${url.schema.minecraft}#/definitions/loot_table_roll"
+					"$ref": "${url.schema.base}/main.schema#/definitions/loot_table_roll"
 				}
 			}
 		},
@@ -425,7 +446,7 @@
 					"type": "array",
 					"items": [
 						{
-							"$ref": "${url.schema.minecraft}#/definitions/enchantment"
+							"$ref": "${url.schema.base}/main.schema#/definitions/enchantment"
 						}
 					]
 				}
@@ -450,7 +471,7 @@
 								"type": "number"
 							},
 							{
-								"$ref": "${url.schema.minecraft}#/definitions/loot_table_roll"
+								"$ref": "${url.schema.base}/main.schema#/definitions/loot_table_roll"
 							}
 						]
 					}
@@ -473,7 +494,7 @@
 				},
 				"decoration": {
 					"description": "The map icon to use.",
-					"$ref": "${url.schema.minecraft}#/definitions/map_icon"
+					"$ref": "${url.schema.base}/main.schema#/definitions/map_icon"
 				},
 				"zoom": {
 					"type": "number",
@@ -528,40 +549,40 @@
 		"enchantment": {
 			"type": "string",
 			"enum": [
-				"protection",
-				"fire_protection",
-				"feather_falling",
-				"blast_protection",
-				"projectile_protection",
-				"thorns",
-				"respiration",
-				"depth_strider",
-				"aqua_affinity",
-				"sharpness",
-				"smite",
-				"bane_of_arthropods",
-				"knockback",
-				"fire_aspect",
-				"looting",
-				"efficiency",
-				"silk_touch",
-				"unbreaking",
-				"fortune",
-				"power",
-				"punch",
-				"flame",
-				"infinity",
-				"luck_of_the_sea",
-				"lure",
-				"frost_walker",
-				"mending",
-				"binding_curse",
-				"vanishing_curse",
-				"impaling",
-				"riptide",
-				"loyalty",
-				"channeling",
-				"sweeping"
+                                "aqua_affinity",
+                                "bane_of_arthropods",
+                                "binding_curse",
+                                "blast_protection",
+                                "channeling",
+                                "depth_strider",
+                                "efficiency",
+                                "feather_falling",
+                                "fire_aspect",
+                                "fire_protection",
+                                "flame",
+                                "fortune",
+                                "frost_walker",
+                                "impaling",
+                                "infinity",
+                                "knockback",
+                                "looting",
+                                "loyalty",
+                                "luck_of_the_sea",
+                                "lure",
+                                "mending",
+                                "power",
+                                "projectile_protection",
+                                "protection",
+                                "punch",
+                                "respiration",
+                                "riptide",
+                                "sharpness",
+                                "silk_touch",
+                                "smite",
+                                "sweeping",
+                                "thorns",
+                                "unbreaking",
+                                "vanishing_curse"
 			]
 		},
 		"map_icon": {

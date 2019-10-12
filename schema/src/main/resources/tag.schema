@@ -2,5 +2,5 @@
 	"$schema": "${url.schema.json}",
 	"title": "Minecraft Tag ${version.minecraft} Draft ${project.version}",
 	"description": "Minecraft datapack Tag object schema for version ${version.minecraft}",
-	"$ref": "${url.schema.minecraft}#/definitions/tag"
+	"$ref": "${url.schema.base}/main.schema#/definitions/tag"
 }
