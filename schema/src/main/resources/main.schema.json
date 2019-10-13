@@ -47,12 +47,14 @@
 		"icon": {
 			"type": "object",
 			"properties": {
-				"item": { 
+				"item": {
 					"description": "Path to an item icon",
 					"type": "string",
 					"oneOf": [
-                                                  { "$ref": "${url.schema.base}/item.schema.json#/definitions/item" }
-					         ]
+						{
+							"$ref": "${url.schema.base}/item.schema.json#/definitions/item"
+						}
+					]
 				},
 				"nbt": {
 					"description": "NBT tag data for the icon",
@@ -143,8 +145,10 @@
 					"description": "A single item, e.g. minecraft:sand.",
 					"type": "string",
 					"oneOf": [
-                                                  { "$ref": "${url.schema.base}/item.schema.json#/definitions/item" }
-					         ]
+						{
+							"$ref": "${url.schema.base}/item.schema.json#/definitions/item"
+						}
+					]
 				},
 				"tag": {
 					"description": "A tag (a.k.a Ore Dictionary) for this ingredient, e.g. minecraft:planks",
@@ -162,8 +166,10 @@
 					"description": "A single item, e.g. minecraft:sand.",
 					"type": "string",
 					"oneOf": [
-                                                  { "$ref": "${url.schema.base}/item.schema.json#/definitions/item" }
-					         ]
+						{
+							"$ref": "${url.schema.base}/item.schema.json#/definitions/item"
+						}
+					]
 				},
 				"count": {
 					"description": "The number of this item.",
@@ -182,26 +188,26 @@
 					"description": "The type of recipe.",
 					"type": "string",
 					"enum": [
-                                                "blasting",
-                                                "campfire_cooking",
-                                                "crafting_shaped",
-                                                "crafting_shapeless",
-                                                "crafting_special_armordye",
-                                                "crafting_special_bannerduplicate",
-                                                "crafting_special_bookcloning",
-                                                "crafting_special_firework_rocket",
-                                                "crafting_special_firework_star",
-                                                "crafting_special_firework_star_fade",
-                                                "crafting_special_mapcloning",
-                                                "crafting_special_mapextending",
-                                                "crafting_special_repairitem",
-                                                "crafting_special_shielddecoration",
-                                                "crafting_special_shulkerboxcoloring",
-                                                "crafting_special_suspiciousstew",
-                                                "crafting_special_tippedarrow",
-                                                "smelting",
-                                                "smoking",
-                                                "stonecutting"
+						"blasting",
+						"campfire_cooking",
+						"crafting_shaped",
+						"crafting_shapeless",
+						"crafting_special_armordye",
+						"crafting_special_bannerduplicate",
+						"crafting_special_bookcloning",
+						"crafting_special_firework_rocket",
+						"crafting_special_firework_star",
+						"crafting_special_firework_star_fade",
+						"crafting_special_mapcloning",
+						"crafting_special_mapextending",
+						"crafting_special_repairitem",
+						"crafting_special_shielddecoration",
+						"crafting_special_shulkerboxcoloring",
+						"crafting_special_suspiciousstew",
+						"crafting_special_tippedarrow",
+						"smelting",
+						"smoking",
+						"stonecutting"
 					]
 				},
 				"group": {
@@ -549,40 +555,40 @@
 		"enchantment": {
 			"type": "string",
 			"enum": [
-                                "aqua_affinity",
-                                "bane_of_arthropods",
-                                "binding_curse",
-                                "blast_protection",
-                                "channeling",
-                                "depth_strider",
-                                "efficiency",
-                                "feather_falling",
-                                "fire_aspect",
-                                "fire_protection",
-                                "flame",
-                                "fortune",
-                                "frost_walker",
-                                "impaling",
-                                "infinity",
-                                "knockback",
-                                "looting",
-                                "loyalty",
-                                "luck_of_the_sea",
-                                "lure",
-                                "mending",
-                                "power",
-                                "projectile_protection",
-                                "protection",
-                                "punch",
-                                "respiration",
-                                "riptide",
-                                "sharpness",
-                                "silk_touch",
-                                "smite",
-                                "sweeping",
-                                "thorns",
-                                "unbreaking",
-                                "vanishing_curse"
+				"aqua_affinity",
+				"bane_of_arthropods",
+				"binding_curse",
+				"blast_protection",
+				"channeling",
+				"depth_strider",
+				"efficiency",
+				"feather_falling",
+				"fire_aspect",
+				"fire_protection",
+				"flame",
+				"fortune",
+				"frost_walker",
+				"impaling",
+				"infinity",
+				"knockback",
+				"looting",
+				"loyalty",
+				"luck_of_the_sea",
+				"lure",
+				"mending",
+				"power",
+				"projectile_protection",
+				"protection",
+				"punch",
+				"respiration",
+				"riptide",
+				"sharpness",
+				"silk_touch",
+				"smite",
+				"sweeping",
+				"thorns",
+				"unbreaking",
+				"vanishing_curse"
 			]
 		},
 		"map_icon": {
