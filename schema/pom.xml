@@ -39,35 +39,35 @@
                     <validations>
                         <validation>
                             <directory>${project.basedir}/src/test/resources/advancements</directory>
-                            <jsonSchema>${url.schema.base}/advancement.schema</jsonSchema>
+                            <jsonSchema>${url.schema.base}/advancement.schema.json</jsonSchema>
                             <includes>
                                 <include>**/*.json</include>
                             </includes>
                         </validation>
                         <validation>
                             <directory>${project.basedir}/src/test/resources/recipes</directory>
-                            <jsonSchema>${url.schema.base}/recipe.schema</jsonSchema>
+                            <jsonSchema>${url.schema.base}/recipe.schema.json</jsonSchema>
                             <includes>
                                 <include>**/*.json</include>
                             </includes>
                         </validation>
                         <validation>
                             <directory>${project.basedir}/src/test/resources/loot_tables</directory>
-                            <jsonSchema>${url.schema.base}/loot_table.schema</jsonSchema>
+                            <jsonSchema>${url.schema.base}/loot_table.schema.json</jsonSchema>
                             <includes>
                                 <include>**/*.json</include>
                             </includes>
                         </validation>
                         <validation>
                             <directory>${project.basedir}/src/test/resources/tags</directory>
-                            <jsonSchema>${url.schema.base}/tag.schema</jsonSchema>
+                            <jsonSchema>${url.schema.base}/tag.schema.json</jsonSchema>
                             <includes>
                                 <include>**/*.json</include>
                             </includes>
                         </validation>
                         <validation>
                             <directory>${project.basedir}/src/test/resources/mcmeta</directory>
-                            <jsonSchema>${url.schema.base}/mcmeta.schema</jsonSchema>
+                            <jsonSchema>${url.schema.base}/mcmeta.schema.json</jsonSchema>
                             <includes>
                                 <include>**/*.mcmeta</include>
                             </includes>

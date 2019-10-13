@@ -2,5 +2,5 @@
 	"$schema": "${url.schema.json}",
 	"title": "Minecraft Advancement ${version.minecraft} Draft ${project.version}",
 	"description": "Minecraft datapack Advancement object schema for version ${version.minecraft}",
-	"$ref": "${url.schema.base}/main.schema#/definitions/advancement"
+	"$ref": "${url.schema.base}/main.schema.json#/definitions/advancement"
 }

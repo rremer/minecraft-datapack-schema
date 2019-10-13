@@ -40,7 +40,7 @@
 			"criteria": {
 				"type": "object",
 				"criteria_name": {
-					"$ref": "${url.schema.base}/main.schema#/definitions/criteria_name"
+					"$ref": "${url.schema.base}/main.schema.json#/definitions/criteria_name"
 				}
 			}
 		},
@@ -51,7 +51,7 @@
 					"description": "Path to an item icon",
 					"type": "string",
 					"oneOf": [
-                                                  { "$ref": "${url.schema.base}/item.schema#/definitions/item" }
+                                                  { "$ref": "${url.schema.base}/item.schema.json#/definitions/item" }
 					         ]
 				},
 				"nbt": {
@@ -67,7 +67,7 @@
 			"type": "object",
 			"properties": {
 				"icon": {
-					"$ref": "${url.schema.base}/main.schema#/definitions/icon"
+					"$ref": "${url.schema.base}/main.schema.json#/definitions/icon"
 				},
 				"title": {
 					"description": "The title to display.",
@@ -113,14 +113,14 @@
 			"type": "object",
 			"properties": {
 				"display": {
-					"$ref": "${url.schema.base}/main.schema#/definitions/display"
+					"$ref": "${url.schema.base}/main.schema.json#/definitions/display"
 				},
 				"parent": {
 					"description": "The parent advancement in the tree.",
 					"type": "string"
 				},
 				"criteria": {
-					"$ref": "${url.schema.base}/main.schema#/definitions/criteria_name"
+					"$ref": "${url.schema.base}/main.schema.json#/definitions/criteria_name"
 				},
 				"requirements": {
 					"description": "List of required criteria, if some are optional.",
@@ -129,7 +129,7 @@
 					]
 				},
 				"rewards": {
-					"$ref": "${url.schema.base}/main.schema#/definitions/rewards"
+					"$ref": "${url.schema.base}/main.schema.json#/definitions/rewards"
 				}
 			},
 			"required": [
@@ -143,7 +143,7 @@
 					"description": "A single item, e.g. minecraft:sand.",
 					"type": "string",
 					"oneOf": [
-                                                  { "$ref": "${url.schema.base}/item.schema#/definitions/item" }
+                                                  { "$ref": "${url.schema.base}/item.schema.json#/definitions/item" }
 					         ]
 				},
 				"tag": {
@@ -162,7 +162,7 @@
 					"description": "A single item, e.g. minecraft:sand.",
 					"type": "string",
 					"oneOf": [
-                                                  { "$ref": "${url.schema.base}/item.schema#/definitions/item" }
+                                                  { "$ref": "${url.schema.base}/item.schema.json#/definitions/item" }
 					         ]
 				},
 				"count": {
@@ -220,21 +220,21 @@
 					"type": "object"
 				},
 				"ingredient": {
-					"$ref": "${url.schema.base}/main.schema#/definitions/item"
+					"$ref": "${url.schema.base}/main.schema.json#/definitions/item"
 				},
 				"ingredients": {
 					"type": "array",
 					"items": {
-						"$ref": "${url.schema.base}/main.schema#/definitions/item"
+						"$ref": "${url.schema.base}/main.schema.json#/definitions/item"
 					}
 				},
 				"result": {
 					"anyOf": [
 						{
-							"$ref": "${url.schema.base}/main.schema#/definitions/item"
+							"$ref": "${url.schema.base}/main.schema.json#/definitions/item"
 						},
 						{
-							"$ref": "${url.schema.base}/main.schema#/definitions/item_stack"
+							"$ref": "${url.schema.base}/main.schema.json#/definitions/item_stack"
 						},
 						{
 							"type": "string"
@@ -288,7 +288,7 @@
 					"description": "Chance multiplier for a loot entry.",
 					"anyOf": [
 						{
-							"$ref": "${url.schema.base}/main.schema#/definitions/loot_table_roll"
+							"$ref": "${url.schema.base}/main.schema.json#/definitions/loot_table_roll"
 						},
 						{
 							"type": "number"
@@ -299,7 +299,7 @@
 					"description": "Chance multiplier affected by looting/luck.",
 					"anyOf": [
 						{
-							"$ref": "${url.schema.base}/main.schema#/definitions/loot_table_roll"
+							"$ref": "${url.schema.base}/main.schema.json#/definitions/loot_table_roll"
 						},
 						{
 							"type": "number"
@@ -350,7 +350,7 @@
 					"type": "array",
 					"items": [
 						{
-							"$ref": "${url.schema.base}/main.schema#/definitions/loot_table_function"
+							"$ref": "${url.schema.base}/main.schema.json#/definitions/loot_table_function"
 						}
 					]
 				}
@@ -368,7 +368,7 @@
 					"type": "array",
 					"items": [
 						{
-							"$ref": "${url.schema.base}/main.schema#/definitions/loot_table_pool"
+							"$ref": "${url.schema.base}/main.schema.json#/definitions/loot_table_pool"
 						}
 					]
 				}
@@ -385,10 +385,10 @@
 					"type": "object",
 					"anyOf": [
 						{
-							"$ref": "${url.schema.base}/main.schema#/definitions/function_set_nbt"
+							"$ref": "${url.schema.base}/main.schema.json#/definitions/function_set_nbt"
 						},
 						{
-							"$ref": "${url.schema.base}/main.schema#/definitions/function_set_count"
+							"$ref": "${url.schema.base}/main.schema.json#/definitions/function_set_count"
 						}
 					]
 				},
@@ -428,7 +428,7 @@
 					]
 				},
 				"count": {
-					"$ref": "${url.schema.base}/main.schema#/definitions/loot_table_roll"
+					"$ref": "${url.schema.base}/main.schema.json#/definitions/loot_table_roll"
 				}
 			}
 		},
@@ -446,7 +446,7 @@
 					"type": "array",
 					"items": [
 						{
-							"$ref": "${url.schema.base}/main.schema#/definitions/enchantment"
+							"$ref": "${url.schema.base}/main.schema.json#/definitions/enchantment"
 						}
 					]
 				}
@@ -471,7 +471,7 @@
 								"type": "number"
 							},
 							{
-								"$ref": "${url.schema.base}/main.schema#/definitions/loot_table_roll"
+								"$ref": "${url.schema.base}/main.schema.json#/definitions/loot_table_roll"
 							}
 						]
 					}
@@ -494,7 +494,7 @@
 				},
 				"decoration": {
 					"description": "The map icon to use.",
-					"$ref": "${url.schema.base}/main.schema#/definitions/map_icon"
+					"$ref": "${url.schema.base}/main.schema.json#/definitions/map_icon"
 				},
 				"zoom": {
 					"type": "number",
