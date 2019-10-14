@@ -4,12 +4,12 @@
     <parent>
         <groupId>com.github.rremer</groupId>
         <artifactId>maven-parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </parent>
 
     <groupId>com.github.rremer</groupId>
     <artifactId>minecraft-datapack-schema-parent</artifactId>
-    <version>1.14.2-1-SNAPSHOT</version>
+    <version>1.14.4-1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Minecraft Datapack Schema Parent</name>
@@ -23,16 +23,10 @@
         <parameter.disable.semantic.versioning>true</parameter.disable.semantic.versioning>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <scm.url>https://github.com/rremer/minecraft-datapack-schema</scm.url>
-        <version.minecraft>1.13.2</version.minecraft>
+        <version.minecraft>1.14.4</version.minecraft>
     </properties>
 
     <url>${scm.url}</url>
-
-    <licenses>
-        <license>
-            <name>MIT</name>
-        </license>
-    </licenses>
 
     <developers>
         <developer>

@@ -1,5 +1,5 @@
 {
-	"$schema": "${url.schema.json}",
+	"$schema": "${schema.schema.url}",
 	"title": "Minecraft ${version.minecraft} Draft ${project.version}",
 	"description": "Minecraft datapack schema for version ${version.minecraft}",
 	"type": "object",
@@ -40,7 +40,7 @@
 			"criteria": {
 				"type": "object",
 				"criteria_name": {
-					"$ref": "${url.schema.base}/main.schema.json#/definitions/criteria_name"
+					"$ref": "${schema.url}/main.schema.json#/definitions/criteria_name"
 				}
 			}
 		},
@@ -52,7 +52,7 @@
 					"type": "string",
 					"oneOf": [
 						{
-							"$ref": "${url.schema.base}/item.schema.json#/definitions/item"
+							"$ref": "${schema.url}/data/items.schema.json#/definitions/item"
 						}
 					]
 				},
@@ -69,7 +69,7 @@
 			"type": "object",
 			"properties": {
 				"icon": {
-					"$ref": "${url.schema.base}/main.schema.json#/definitions/icon"
+					"$ref": "${schema.url}/main.schema.json#/definitions/icon"
 				},
 				"title": {
 					"description": "The title to display.",
@@ -115,14 +115,14 @@
 			"type": "object",
 			"properties": {
 				"display": {
-					"$ref": "${url.schema.base}/main.schema.json#/definitions/display"
+					"$ref": "${schema.url}/main.schema.json#/definitions/display"
 				},
 				"parent": {
 					"description": "The parent advancement in the tree.",
 					"type": "string"
 				},
 				"criteria": {
-					"$ref": "${url.schema.base}/main.schema.json#/definitions/criteria_name"
+					"$ref": "${schema.url}/main.schema.json#/definitions/criteria_name"
 				},
 				"requirements": {
 					"description": "List of required criteria, if some are optional.",
@@ -131,7 +131,7 @@
 					]
 				},
 				"rewards": {
-					"$ref": "${url.schema.base}/main.schema.json#/definitions/rewards"
+					"$ref": "${schema.url}/main.schema.json#/definitions/rewards"
 				}
 			},
 			"required": [
@@ -146,7 +146,7 @@
 					"type": "string",
 					"oneOf": [
 						{
-							"$ref": "${url.schema.base}/item.schema.json#/definitions/item"
+							"$ref": "${schema.url}/data/items.schema.json#/definitions/item"
 						}
 					]
 				},
@@ -167,7 +167,7 @@
 					"type": "string",
 					"oneOf": [
 						{
-							"$ref": "${url.schema.base}/item.schema.json#/definitions/item"
+							"$ref": "${schema.url}/data/items.schema.json#/definitions/item"
 						}
 					]
 				},
@@ -187,27 +187,10 @@
 				"type": {
 					"description": "The type of recipe.",
 					"type": "string",
-					"enum": [
-						"blasting",
-						"campfire_cooking",
-						"crafting_shaped",
-						"crafting_shapeless",
-						"crafting_special_armordye",
-						"crafting_special_bannerduplicate",
-						"crafting_special_bookcloning",
-						"crafting_special_firework_rocket",
-						"crafting_special_firework_star",
-						"crafting_special_firework_star_fade",
-						"crafting_special_mapcloning",
-						"crafting_special_mapextending",
-						"crafting_special_repairitem",
-						"crafting_special_shielddecoration",
-						"crafting_special_shulkerboxcoloring",
-						"crafting_special_suspiciousstew",
-						"crafting_special_tippedarrow",
-						"smelting",
-						"smoking",
-						"stonecutting"
+					"oneOf": [
+						{
+							"$ref": "${schema.url}/data/recipe_types.schema.json#/definitions/recipe_type"
+						}
 					]
 				},
 				"group": {
@@ -226,21 +209,21 @@
 					"type": "object"
 				},
 				"ingredient": {
-					"$ref": "${url.schema.base}/main.schema.json#/definitions/item"
+					"$ref": "${schema.url}/main.schema.json#/definitions/item"
 				},
 				"ingredients": {
 					"type": "array",
 					"items": {
-						"$ref": "${url.schema.base}/main.schema.json#/definitions/item"
+						"$ref": "${schema.url}/main.schema.json#/definitions/item"
 					}
 				},
 				"result": {
 					"anyOf": [
 						{
-							"$ref": "${url.schema.base}/main.schema.json#/definitions/item"
+							"$ref": "${schema.url}/main.schema.json#/definitions/item"
 						},
 						{
-							"$ref": "${url.schema.base}/main.schema.json#/definitions/item_stack"
+							"$ref": "${schema.url}/main.schema.json#/definitions/item_stack"
 						},
 						{
 							"type": "string"
@@ -294,7 +277,7 @@
 					"description": "Chance multiplier for a loot entry.",
 					"anyOf": [
 						{
-							"$ref": "${url.schema.base}/main.schema.json#/definitions/loot_table_roll"
+							"$ref": "${schema.url}/main.schema.json#/definitions/loot_table_roll"
 						},
 						{
 							"type": "number"
@@ -305,7 +288,7 @@
 					"description": "Chance multiplier affected by looting/luck.",
 					"anyOf": [
 						{
-							"$ref": "${url.schema.base}/main.schema.json#/definitions/loot_table_roll"
+							"$ref": "${schema.url}/main.schema.json#/definitions/loot_table_roll"
 						},
 						{
 							"type": "number"
@@ -356,7 +339,7 @@
 					"type": "array",
 					"items": [
 						{
-							"$ref": "${url.schema.base}/main.schema.json#/definitions/loot_table_function"
+							"$ref": "${schema.url}/main.schema.json#/definitions/loot_table_function"
 						}
 					]
 				}
@@ -374,7 +357,7 @@
 					"type": "array",
 					"items": [
 						{
-							"$ref": "${url.schema.base}/main.schema.json#/definitions/loot_table_pool"
+							"$ref": "${schema.url}/main.schema.json#/definitions/loot_table_pool"
 						}
 					]
 				}
@@ -391,10 +374,10 @@
 					"type": "object",
 					"anyOf": [
 						{
-							"$ref": "${url.schema.base}/main.schema.json#/definitions/function_set_nbt"
+							"$ref": "${schema.url}/main.schema.json#/definitions/function_set_nbt"
 						},
 						{
-							"$ref": "${url.schema.base}/main.schema.json#/definitions/function_set_count"
+							"$ref": "${schema.url}/main.schema.json#/definitions/function_set_count"
 						}
 					]
 				},
@@ -434,7 +417,7 @@
 					]
 				},
 				"count": {
-					"$ref": "${url.schema.base}/main.schema.json#/definitions/loot_table_roll"
+					"$ref": "${schema.url}/main.schema.json#/definitions/loot_table_roll"
 				}
 			}
 		},
@@ -452,7 +435,7 @@
 					"type": "array",
 					"items": [
 						{
-							"$ref": "${url.schema.base}/main.schema.json#/definitions/enchantment"
+							"$ref": "${schema.url}/main.schema.json#/definitions/enchantment"
 						}
 					]
 				}
@@ -477,7 +460,7 @@
 								"type": "number"
 							},
 							{
-								"$ref": "${url.schema.base}/main.schema.json#/definitions/loot_table_roll"
+								"$ref": "${schema.url}/main.schema.json#/definitions/loot_table_roll"
 							}
 						]
 					}
@@ -500,7 +483,7 @@
 				},
 				"decoration": {
 					"description": "The map icon to use.",
-					"$ref": "${url.schema.base}/main.schema.json#/definitions/map_icon"
+					"$ref": "${schema.url}/main.schema.json#/definitions/map_icon"
 				},
 				"zoom": {
 					"type": "number",
@@ -554,74 +537,19 @@
 		},
 		"enchantment": {
 			"type": "string",
-			"enum": [
-				"aqua_affinity",
-				"bane_of_arthropods",
-				"binding_curse",
-				"blast_protection",
-				"channeling",
-				"depth_strider",
-				"efficiency",
-				"feather_falling",
-				"fire_aspect",
-				"fire_protection",
-				"flame",
-				"fortune",
-				"frost_walker",
-				"impaling",
-				"infinity",
-				"knockback",
-				"looting",
-				"loyalty",
-				"luck_of_the_sea",
-				"lure",
-				"mending",
-				"power",
-				"projectile_protection",
-				"protection",
-				"punch",
-				"respiration",
-				"riptide",
-				"sharpness",
-				"silk_touch",
-				"smite",
-				"sweeping",
-				"thorns",
-				"unbreaking",
-				"vanishing_curse"
+			"oneOf": [
+				{
+					"$ref": "${schema.url}/data/enchantments.schema.json#/definitions/enchantment"
+				}
 			]
 		},
 		"map_icon": {
 			"description": "An icon to mark a position on a map.",
 			"type": "string",
-			"enum": [
-				"player",
-				"frame",
-				"red_marker",
-				"blue_marker",
-				"target_x",
-				"target_point",
-				"player_off_map",
-				"player_off_limits",
-				"mansion",
-				"monument",
-				"red_x",
-				"banner_white",
-				"banner_orange",
-				"banner_magenta",
-				"banner_light_blue",
-				"banner_yellow",
-				"banner_lime",
-				"banner_pink",
-				"banner_gray",
-				"banner_light_gray",
-				"banner_cyan",
-				"banner_purple",
-				"banner_blue",
-				"banner_brown",
-				"banner_green",
-				"banner_red",
-				"banner_black"
+			"oneOf": [
+				{
+					"$ref": "${schema.url}/data/map_icons.schema.json#/definitions/icon"
+				}
 			]
 		}
 	}

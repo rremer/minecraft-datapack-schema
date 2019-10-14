@@ -1,6 +1,6 @@
 {
-	"$schema": "${url.schema.json}",
+	"$schema": "${schema.schema.url}",
 	"title": "Minecraft datapack Metadata ${version.minecraft} Draft ${project.version}",
 	"description": "Minecraft datapack Metadata object schema for version ${version.minecraft}",
-	"$ref": "${url.schema.base}/main.schema.json#/definitions/mcmeta"
+	"$ref": "${schema.url}/main.schema.json#/definitions/mcmeta"
 }

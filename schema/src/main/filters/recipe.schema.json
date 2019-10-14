@@ -1,6 +1,6 @@
 {
-	"$schema": "${url.schema.json}",
+	"$schema": "${schema.schema.url}",
 	"title": "Minecraft Recipe ${version.minecraft} Draft ${project.version}",
 	"description": "Minecraft datapack Recipe object schema for version ${version.minecraft}",
-	"$ref": "${url.schema.base}/main.schema.json#/definitions/recipe"
+	"$ref": "${schema.url}/main.schema.json#/definitions/recipe"
 }

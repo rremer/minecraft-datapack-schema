@@ -1,5 +1,5 @@
 {
-	"$schema": "${url.schema.json}",
+	"$schema": "${schema.schema.url}",
 	"title": "Minecraft Item ${version.minecraft} Draft ${project.version}",
 	"description": "Minecraft datapack Item enumeration schema for version ${version.minecraft}",
 	"definitions": {
