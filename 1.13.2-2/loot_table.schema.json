@@ -1,0 +1,6 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Minecraft Loot Table 1.13.2 Draft 1.13.2-2",
+	"description": "Minecraft datapack Loot Table object schema for version 1.13.2",
+	"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/loot_table"
+}

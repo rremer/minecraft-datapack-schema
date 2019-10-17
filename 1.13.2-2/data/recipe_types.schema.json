@@ -1,0 +1,32 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Minecraft Recipe Type 1.13.2 Draft 1.13.2-2",
+	"description": "Minecraft datapack Recipe Type enumeration schema for version 1.13.2",
+	"definitions": {
+		"recipe_type": {
+			"type": "string",
+			"enum": [
+				"blasting",
+				"campfire_cooking",
+				"crafting_shaped",
+				"crafting_shapeless",
+				"crafting_special_armordye",
+				"crafting_special_bannerduplicate",
+				"crafting_special_bookcloning",
+				"crafting_special_firework_rocket",
+				"crafting_special_firework_star",
+				"crafting_special_firework_star_fade",
+				"crafting_special_mapcloning",
+				"crafting_special_mapextending",
+				"crafting_special_repairitem",
+				"crafting_special_shielddecoration",
+				"crafting_special_shulkerboxcoloring",
+				"crafting_special_suspiciousstew",
+				"crafting_special_tippedarrow",
+				"smelting",
+				"smoking",
+				"stonecutting"
+			]
+		}
+	}
+}

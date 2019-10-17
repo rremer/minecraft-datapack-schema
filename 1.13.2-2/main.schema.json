@@ -1,0 +1,556 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Minecraft 1.13.2 Draft 1.13.2-2",
+	"description": "Minecraft datapack schema for version 1.13.2",
+	"type": "object",
+	"definitions": {
+		"rewards": {
+			"type": "object",
+			"properties": {
+				"recipes": {
+					"description": "String crafting recipes.",
+					"type": "array"
+				},
+				"experience": {
+					"description": "Amount of experience to give.",
+					"type": "number"
+				},
+				"function": {
+					"description": "An mcfunction to run..",
+					"type": "string"
+				},
+				"loot": {
+					"description": "Loot tables to pull from.",
+					"type": "array"
+				}
+			}
+		},
+		"criteria_name": {
+			"type": "object",
+			"properties": {
+				"trigger": {
+					"description": "Function name of the trigger e.g. minecraft:changed_dimension.",
+					"type": "string"
+				},
+				"conditions": {
+					"description": "List of json conditions which must be met to trigger.",
+					"type": "array"
+				}
+			},
+			"criteria": {
+				"type": "object",
+				"criteria_name": {
+					"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/criteria_name"
+				}
+			}
+		},
+		"icon": {
+			"type": "object",
+			"properties": {
+				"item": {
+					"description": "Path to an item icon",
+					"type": "string",
+					"oneOf": [
+						{
+							"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/data/items.schema.json#/definitions/item"
+						}
+					]
+				},
+				"nbt": {
+					"description": "NBT tag data for the icon",
+					"type": "string"
+				}
+			},
+			"required": [
+				"item"
+			]
+		},
+		"display": {
+			"type": "object",
+			"properties": {
+				"icon": {
+					"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/icon"
+				},
+				"title": {
+					"description": "The title to display.",
+					"type": [
+						"string",
+						"object"
+					]
+				},
+				"frame": {
+					"description": "The frame for the icon.",
+					"type": "string"
+				},
+				"background": {
+					"description": "The path to a directory for a background.",
+					"type": "string"
+				},
+				"description": {
+					"description": "The detailed description to display.",
+					"type": [
+						"string",
+						"object"
+					]
+				},
+				"show_toast": {
+					"description": "Display client-side pop-up on completion of criteria.",
+					"type": "boolean"
+				},
+				"announce_to_chat": {
+					"description": "Chat to server upon completion of criteria.",
+					"type": "boolean"
+				},
+				"hidden": {
+					"description": "Disable display on menu screen..",
+					"type": "boolean"
+				}
+			},
+			"required": [
+				"title",
+				"description"
+			]
+		},
+		"advancement": {
+			"type": "object",
+			"properties": {
+				"display": {
+					"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/display"
+				},
+				"parent": {
+					"description": "The parent advancement in the tree.",
+					"type": "string"
+				},
+				"criteria": {
+					"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/criteria_name"
+				},
+				"requirements": {
+					"description": "List of required criteria, if some are optional.",
+					"type": [
+						"string"
+					]
+				},
+				"rewards": {
+					"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/rewards"
+				}
+			},
+			"required": [
+				"criteria"
+			]
+		},
+		"item": {
+			"type": "object",
+			"properties": {
+				"item": {
+					"description": "A single item, e.g. minecraft:sand.",
+					"type": "string",
+					"oneOf": [
+						{
+							"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/data/items.schema.json#/definitions/item"
+						}
+					]
+				},
+				"tag": {
+					"description": "A tag (a.k.a Ore Dictionary) for this ingredient, e.g. minecraft:planks",
+					"type": "string"
+				}
+			},
+			"required": [
+				"item"
+			]
+		},
+		"item_stack": {
+			"type": "object",
+			"properties": {
+				"item": {
+					"description": "A single item, e.g. minecraft:sand.",
+					"type": "string",
+					"oneOf": [
+						{
+							"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/data/items.schema.json#/definitions/item"
+						}
+					]
+				},
+				"count": {
+					"description": "The number of this item.",
+					"type": "number"
+				}
+			},
+			"required": [
+				"item",
+				"count"
+			]
+		},
+		"recipe": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"description": "The type of recipe.",
+					"type": "string",
+					"oneOf": [
+						{
+							"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/data/recipe_types.schema.json#/definitions/recipe_type"
+						}
+					]
+				},
+				"group": {
+					"description": "String to group/tab in recipe book by.",
+					"type": "string"
+				},
+				"pattern": {
+					"description": "Array of crafting ingredients which comprise the recipe.",
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"key": {
+					"description": "A legend of symbols used in pattern field to map to ingredients/items.",
+					"type": "object"
+				},
+				"ingredient": {
+					"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/item"
+				},
+				"ingredients": {
+					"type": "array",
+					"items": {
+						"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/item"
+					}
+				},
+				"result": {
+					"anyOf": [
+						{
+							"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/item"
+						},
+						{
+							"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/item_stack"
+						},
+						{
+							"type": "string"
+						}
+					]
+				},
+				"experience": {
+					"description": "The amount of XP to grant the player.",
+					"type": "number"
+				},
+				"cookingtime": {
+					"description": "For non crafting_shape* recipes, the time in game ticks crafting takes to complete..",
+					"type": "number"
+				}
+			},
+			"required": [
+				"type",
+				"group",
+				"result"
+			]
+		},
+		"loot_table_roll": {
+			"description": "Loot table change multiplier.",
+			"type": "object",
+			"properties": {
+				"min": {
+					"type": "number"
+				},
+				"max": {
+					"type": "number"
+				}
+			},
+			"required": [
+				"min",
+				"max"
+			]
+		},
+		"loot_table_pool": {
+			"type": "object",
+			"properties": {
+				"conditions": {
+					"description": "List Loot Table conditions.",
+					"type": "array",
+					"items": [
+						{
+							"type": "object"
+						}
+					]
+				},
+				"rolls": {
+					"description": "Chance multiplier for a loot entry.",
+					"anyOf": [
+						{
+							"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/loot_table_roll"
+						},
+						{
+							"type": "number"
+						}
+					]
+				},
+				"bonus_rolls": {
+					"description": "Chance multiplier affected by looting/luck.",
+					"anyOf": [
+						{
+							"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/loot_table_roll"
+						},
+						{
+							"type": "number"
+						}
+					]
+				},
+				"entries": {
+					"description": "List of lootables.",
+					"type": "array",
+					"items": [
+						{
+							"type": "object"
+						}
+					]
+				}
+			},
+			"required": [
+				"rolls",
+				"entries"
+			]
+		},
+		"loot_table_entry": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"enum": [
+						"item",
+						"loot_table",
+						"empty"
+					]
+				},
+				"condition": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"weight": {
+					"description": "Priority chance an entry is selected from a table.",
+					"type": "number"
+				},
+				"quality": {
+					"description": "Priority modifier based on looting/luck.",
+					"type": "number"
+				},
+				"functions": {
+					"description": "Functions to apply to item stacks after selection and beore construction.",
+					"type": "array",
+					"items": [
+						{
+							"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/loot_table_function"
+						}
+					]
+				}
+			},
+			"required": [
+				"type",
+				"weight"
+			]
+		},
+		"loot_table": {
+			"type": "object",
+			"properties": {
+				"pools": {
+					"description": "List of loot table pools",
+					"type": "array",
+					"items": [
+						{
+							"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/loot_table_pool"
+						}
+					]
+				}
+			},
+			"required": [
+				"pools"
+			]
+		},
+		"loot_table_function": {
+			"description": "Built-in functions to apply to loot table item stacks.",
+			"type": "object",
+			"properties": {
+				"function": {
+					"type": "object",
+					"anyOf": [
+						{
+							"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/function_set_nbt"
+						},
+						{
+							"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/function_set_count"
+						}
+					]
+				},
+				"conditions": {
+					"type": "array",
+					"items": [
+						{
+							"type": "string"
+						}
+					]
+				}
+			}
+		},
+		"function_set_nbt": {
+			"description": "Set tag data on an item stack.",
+			"type": "object",
+			"properties": {
+				"function": {
+					"type": "string",
+					"enum": [
+						"set_nbt"
+					]
+				},
+				"tag": {
+					"type": "string"
+				}
+			}
+		},
+		"function_set_count": {
+			"description": "Set number of items in a stack.",
+			"type": "object",
+			"properties": {
+				"function": {
+					"type": "string",
+					"enum": [
+						"set_count"
+					]
+				},
+				"count": {
+					"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/loot_table_roll"
+				}
+			}
+		},
+		"function_enchant_randomly": {
+			"description": "Enchants an item with a random enchant of random level.",
+			"type": "object",
+			"properties": {
+				"function": {
+					"type": "string",
+					"enum": [
+						"enchant_randomly"
+					]
+				},
+				"enchantments": {
+					"type": "array",
+					"items": [
+						{
+							"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/enchantment"
+						}
+					]
+				}
+			}
+		},
+		"function_enchant_with_levels": {
+			"description": "Enchants an item with a random enchant of a specific level.",
+			"type": "object",
+			"properties": {
+				"function": {
+					"type": "string",
+					"enum": [
+						"enchant_with_levels"
+					]
+				},
+				"treasure": {
+					"description": "Whether to use enchantments not found on the normal tables.",
+					"type": "boolean",
+					"levels": {
+						"anyOf": [
+							{
+								"type": "number"
+							},
+							{
+								"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/loot_table_roll"
+							}
+						]
+					}
+				}
+			}
+		},
+		"function_exploration_map": {
+			"description": "Converts an empty map to lead to a point of interest.",
+			"type": "object",
+			"properties": {
+				"function": {
+					"type": "string",
+					"enum": [
+						"exploration_map"
+					]
+				},
+				"destination": {
+					"description": "The name of a structure type to locate (e.g. /locate).",
+					"type": "string"
+				},
+				"decoration": {
+					"description": "The map icon to use.",
+					"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/main.schema.json#/definitions/map_icon"
+				},
+				"zoom": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 4
+				},
+				"search_radius": {
+					"description": "Radius in chunks to search for a structure from the map.",
+					"type": "number",
+					"minimum": 0
+				},
+				"skip_existing_chunks": {
+					"description": "Whether to ignore structures in visited chunks.",
+					"type": "boolean"
+				}
+			}
+		},
+		"tag": {
+			"description": "An ingredient or item stack tag.",
+			"type": "object",
+			"properties": {
+				"replace": {
+					"description": "False to append tags, True to override vanilla tags.",
+					"type": "boolean"
+				},
+				"values": {
+					"type": "array",
+					"items": [
+						{
+							"type": "string"
+						}
+					]
+				}
+			}
+		},
+		"mcmeta": {
+			"description": "Datapack metadata.",
+			"type": "object",
+			"properties": {
+				"pack_format": {
+					"description": "1 for 1.6-1.8, 2 for 1.9-1.10, 3 for 1.11-1.12, 4 for 1.13+.",
+					"type": "number",
+					"minimum": 1,
+					"maximum": 4
+				},
+				"description": {
+					"description": "Yodawg, this field should have a description of the datpack.",
+					"type": "string"
+				}
+			}
+		},
+		"enchantment": {
+			"type": "string",
+			"oneOf": [
+				{
+					"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/data/enchantments.schema.json#/definitions/enchantment"
+				}
+			]
+		},
+		"map_icon": {
+			"description": "An icon to mark a position on a map.",
+			"type": "string",
+			"oneOf": [
+				{
+					"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/data/map_icons.schema.json#/definitions/icon"
+				}
+			]
+		}
+	}
+}
