@@ -1,8 +1,8 @@
 # minecraft-datapack-schema
 
 [![Build Status](https://img.shields.io/travis/rremer/minecraft-datapack-schema)](https://travis-ci.org/rremer/minecraft-datapack-schema)
-[![Site](https://img.shields.io/badge/site-1.13.2-1-green.svg)](https://rremer.github.io/minecraft-datapack-schema/1.13.2-1/index.html)
-[![Maven Central](https://img.shields.io/nexus/r/com.github.rremer/minecraft-datapack-schema?server=https%3A%2F%2Foss.sonatype.org)](https://search.maven.org/artifact/com.github.rremer/minecraft-datapack-schema/1.13.2-1/jar)
+[![Site](https://img.shields.io/badge/site-1.13.2-2-green.svg)](https://rremer.github.io/minecraft-datapack-schema/1.13.2-2/index.html)
+[![Maven Central](https://img.shields.io/nexus/r/com.github.rremer/minecraft-datapack-schema?server=https%3A%2F%2Foss.sonatype.org)](https://search.maven.org/artifact/com.github.rremer/minecraft-datapack-schema/1.13.2-2/jar)
 [![License](https://img.shields.io/github/license/rremer/minecraft-datapack-schema)](https://opensource.org/licenses/MIT)
 [![Keybase PGP](https://img.shields.io/keybase/pgp/rremer)](https://keybase.io/rremer/pgp_keys.asc)
 
@@ -15,7 +15,7 @@ In your maven project with oss.sonatype.org as an upstream repository, point at 
 ```xml
   <properties>
     <version.json-schema-validator>1.2.0</version.json-schema-validator>
-    <schema.url>https://rremer.github.io/minecraft-datapack-schema/1.13.2-1</schema.url>
+    <schema.url>https://rremer.github.io/minecraft-datapack-schema/1.13.2-2</schema.url>
   </properties>
 
   <build>
