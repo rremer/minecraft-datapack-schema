@@ -1,32 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>com.github.rremer</groupId>
         <artifactId>maven-parent</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
     </parent>
 
     <groupId>com.github.rremer</groupId>
-    <artifactId>minecraft-datapack-schema-parent</artifactId>
-    <version>1.14.4-1-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <artifactId>minecraft-datapack-schema</artifactId>
+    <version>1.13.2-2</version>
+    <packaging>jar</packaging>
 
-    <name>Minecraft Datapack Schema Parent</name>
-    <description>A parent pom for Minecraft datapacks.</description>
-
-    <modules>
-        <module>schema</module>
-    </modules>
+    <name>Minecraft Datapack Schema</name>
+    <description>Schema for Minecraft datapacks</description>
 
     <properties>
-        <parameter.disable.semantic.versioning>true</parameter.disable.semantic.versioning>
+        <github.project>minecraft-datapack-schema</github.project>
+        <github.site.location>${project.version}</github.site.location>
+	<github.site.url>https://${github.owner}.github.io/${github.project}</github.site.url>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <scm.url>https://github.com/rremer/minecraft-datapack-schema</scm.url>
-        <version.minecraft>1.14.4</version.minecraft>
+        <schema.local.properties>${schema.properties.url}/local.properties</schema.local.properties>
+        <schema.local.url>file://${project.build.outputDirectory}</schema.local.url>
+        <schema.properties.url>${project.build.outputDirectory}/properties</schema.properties.url>
+
+        <schema.schema.url>http://json-schema.org/draft-07/schema#</schema.schema.url>
+        <schema.site.properties>${schema.properties.url}/site.properties</schema.site.properties>
+        <schema.site.url>${project.url}</schema.site.url>
+        <scm.url>https://github.com/${github.owner}/${github.project}</scm.url>
+        <version.json-schema-validator>1.2.0</version.json-schema-validator>
+        <version.minecraft>1.13.2</version.minecraft>
     </properties>
 
-    <url>${scm.url}</url>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.groupon.maven.plugin.json</groupId>
+                <artifactId>json-schema-validator</artifactId>
+                <version>${version.json-schema-validator}</version>
+                <configuration>
+                    <validations>
+                        <validation>
+                            <directory>${project.basedir}/src/test/resources/advancements</directory>
+                            <jsonSchema>${schema.local.url}/advancement.schema.json</jsonSchema>
+                            <includes>
+                                <include>**/*.json</include>
+                            </includes>
+                        </validation>
+                        <validation>
+                            <directory>${project.basedir}/src/test/resources/recipes</directory>
+                            <jsonSchema>${schema.local.url}/recipe.schema.json</jsonSchema>
+                            <includes>
+                                <include>**/*.json</include>
+                            </includes>
+                        </validation>
+                        <validation>
+                            <directory>${project.basedir}/src/test/resources/loot_tables</directory>
+                            <jsonSchema>${schema.local.url}/loot_table.schema.json</jsonSchema>
+                            <includes>
+                                <include>**/*.json</include>
+                            </includes>
+                        </validation>
+                        <validation>
+                            <directory>${project.basedir}/src/test/resources/tags</directory>
+                            <jsonSchema>${schema.local.url}/tag.schema.json</jsonSchema>
+                            <includes>
+                                <include>**/*.json</include>
+                            </includes>
+                        </validation>
+                        <validation>
+                            <directory>${project.basedir}/src/test/resources/mcmeta</directory>
+                            <jsonSchema>${schema.local.url}/mcmeta.schema.json</jsonSchema>
+                            <includes>
+                                <include>**/*.mcmeta</include>
+                            </includes>
+                        </validation>
+                    </validations>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>validate</goal>
+                        </goals>
+                        <phase>integration-test</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <resources>
+                        <resource>
+                            <directory>src/main/filters</directory>
+                            <filtering>true</filtering>
+                            <includes>
+                                <include>*</include>
+                                <include>**/*</include>
+                            </includes>
+                        </resource>
+                    </resources>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>site</id>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/site</outputDirectory>
+                            <filters>
+                                <filter>${schema.site.properties}</filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>classes</id>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                            <filters>
+                                <filter>${schema.local.properties}</filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.basepom.maven</groupId>
+                <artifactId>duplicate-finder-maven-plugin</artifactId>
+                <configuration>
+                    <ignoredResourcePatterns combine.children="append">
+                        <ignoredResourcePattern>.*.json</ignoredResourcePattern>
+                    </ignoredResourcePatterns>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <url>${github.site.url}/${github.site.location}</url>
 
     <developers>
         <developer>
