@@ -1,0 +1,6 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Minecraft Tag 1.13.2 Draft 1.13.2-4",
+	"description": "Minecraft datapack Tag object schema for version 1.13.2",
+	"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.13.2-4/main.schema.json#/definitions/tag"
+}
