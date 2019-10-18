@@ -10,7 +10,7 @@
 
     <groupId>com.github.rremer</groupId>
     <artifactId>minecraft-datapack-schema</artifactId>
-    <version>1.13.2-5</version>
+    <version>1.14.4-1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Minecraft Datapack Schema</name>
@@ -31,7 +31,7 @@
         <schema.site.url>${project.url}</schema.site.url>
         <scm.url>https://github.com/${github.owner}/${github.project}</scm.url>
         <version.json-schema-validator>1.2.0</version.json-schema-validator>
-        <version.minecraft>1.13.2</version.minecraft>
+        <version.minecraft>1.14.4</version.minecraft>
     </properties>
 
     <build>
