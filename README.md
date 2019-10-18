@@ -1,7 +1,7 @@
 # minecraft-datapack-schema
 
 [![Build Status](https://img.shields.io/travis/rremer/minecraft-datapack-schema)](https://travis-ci.org/rremer/minecraft-datapack-schema)
-[![Maven Central](https://img.shields.io/nexus/r/com.github.rremer/minecraft-datapack-schema?server=https%3A%2F%2Foss.sonatype.org)](https://search.maven.org/artifact/com.github.rremer/minecraft-datapack-schema/1.13.2-5/jar)
+[![Maven Central](https://img.shields.io/nexus/r/com.github.rremer/minecraft-datapack-schema?server=https%3A%2F%2Foss.sonatype.org)](https://search.maven.org/artifact/com.github.rremer/minecraft-datapack-schema/1.14.4-1/jar)
 [![License](https://img.shields.io/github/license/rremer/minecraft-datapack-schema)](https://opensource.org/licenses/MIT)
 [![Keybase PGP](https://img.shields.io/keybase/pgp/rremer)](https://keybase.io/rremer/pgp_keys.asc)
 
@@ -14,7 +14,7 @@ In your maven project with oss.sonatype.org as an upstream repository, point at 
 ```xml
   <properties>
     <version.json-schema-validator>1.2.0</version.json-schema-validator>
-    <schema.url>https://rremer.github.io/minecraft-datapack-schema/1.13.2-5</schema.url>
+    <schema.url>https://rremer.github.io/minecraft-datapack-schema/1.14.4-1</schema.url>
   </properties>
 
   <build>
@@ -56,7 +56,7 @@ mvn clean install
 ## Releasing
 
 ```sh
-mvn versions:set -DnewVersion=1.13.2-6
+mvn versions:set -DnewVersion=1.14.4-2
 mvn clean deploy -Dparameter.gpg.skip=false
 mvn site site-deploy
 ```
@@ -68,8 +68,8 @@ A version number of this project's artifacts is built as ```<minecraft.version>-
 * ```project.version``` is an increment for this project to release against a version of minecraft (1,2,3, ...)
 
 [per their instructions]:https://central.sonatype.org/pages/apache-maven.html
-[advancement]:https://rremer.github.io/minecraft-datapack-schema/1.13.2-5/advancement.schema.json
-[loot_table]:https://rremer.github.io/minecraft-datapack-schema/1.13.2-5/loot_table.schema.json
-[recipe]:https://rremer.github.io/minecraft-datapack-schema/1.13.2-5/recipe.schema.json
-[tag]:https://rremer.github.io/minecraft-datapack-schema/1.13.2-5/tag.schema.json
-[mcmeta]:https://rremer.github.io/minecraft-datapack-schema/1.13.2-5/mcmeta.schema.json
+[advancement]:https://rremer.github.io/minecraft-datapack-schema/1.14.4-1/advancement.schema.json
+[loot_table]:https://rremer.github.io/minecraft-datapack-schema/1.14.4-1/loot_table.schema.json
+[recipe]:https://rremer.github.io/minecraft-datapack-schema/1.14.4-1/recipe.schema.json
+[tag]:https://rremer.github.io/minecraft-datapack-schema/1.14.4-1/tag.schema.json
+[mcmeta]:https://rremer.github.io/minecraft-datapack-schema/1.14.4-1/mcmeta.schema.json
