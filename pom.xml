@@ -10,7 +10,7 @@
 
     <groupId>com.github.rremer</groupId>
     <artifactId>minecraft-datapack-schema</artifactId>
-    <version>1.13.2-3</version>
+    <version>1.13.2-4</version>
     <packaging>jar</packaging>
 
     <name>Minecraft Datapack Schema</name>
