@@ -1,0 +1,39 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Minecraft Map Icon 1.14.4 Draft 1.14.4-2",
+	"description": "Minecraft datapack Map Icon enumeration schema for version 1.14.4",
+	"definitions": {
+		"enchantment": {
+			"type": "string",
+			"enum": [
+				"banner_black",
+				"banner_blue",
+				"banner_brown",
+				"banner_cyan",
+				"banner_gray",
+				"banner_green",
+				"banner_light_blue",
+				"banner_light_gray",
+				"banner_lime",
+				"banner_magenta",
+				"banner_orange",
+				"banner_pink",
+				"banner_purple",
+				"banner_red",
+				"banner_white",
+				"banner_yellow",
+				"blue_marker",
+				"frame",
+				"mansion",
+				"monument",
+				"player",
+				"player_off_limits",
+				"player_off_map",
+				"red_marker",
+				"red_x",
+				"target_point",
+				"target_x"
+			]
+		}
+	}
+}

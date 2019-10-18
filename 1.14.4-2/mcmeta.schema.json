@@ -1,0 +1,6 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Minecraft datapack Metadata 1.14.4 Draft 1.14.4-2",
+	"description": "Minecraft datapack Metadata object schema for version 1.14.4",
+	"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.14.4-2/main.schema.json#/definitions/mcmeta"
+}
