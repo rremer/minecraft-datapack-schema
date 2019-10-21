@@ -10,7 +10,7 @@
 
     <groupId>com.github.rremer</groupId>
     <artifactId>minecraft-datapack-schema</artifactId>
-    <version>19w42a-1-SNAPSHOT</version>
+    <version>1.14.4-3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Minecraft Datapack Schema</name>
@@ -163,6 +163,7 @@
         <developerConnection>scm:git:git:${scm.url}.git</developerConnection>
         <url>${scm.url}</url>
     </scm>
+
     <issueManagement>
         <system>Github Issues</system>
         <url>${scm.url}/issues</url>

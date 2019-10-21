@@ -1,0 +1,38 @@
+{
+	"parent": "advancements:example/root",
+	"display": {
+		"icon": {
+			"item": "minecraft:wheat"
+		},
+		"title": {
+			"translate": "advancements.example.title"
+		},
+		"description": {
+			"translate": "advancements.example.description"
+		},
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"criteria": {
+		"example": {
+			"trigger": "minecraft:placed_block",
+			"conditions": {
+				"block": "minecraft:pumpkin_stem"
+			}
+		},
+		"example_2": {
+			"trigger": "minecraft:placed_block",
+			"conditions": {
+				"block": "minecraft:wheat"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"example",
+			"example2"
+		]
+	]
+}
