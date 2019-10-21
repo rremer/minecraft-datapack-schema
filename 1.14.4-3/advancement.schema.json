@@ -1,0 +1,6 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Minecraft Advancement 1.14.4 Draft 1.14.4-3",
+	"description": "Minecraft datapack Advancement object schema for version 1.14.4",
+	"$ref": "https://rremer.github.io/minecraft-datapack-schema/1.14.4-3/main.schema.json#/definitions/advancement"
+}
